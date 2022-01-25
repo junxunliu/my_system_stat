@@ -2,14 +2,13 @@
 a C program that will report different metrics of the utilization of a given system
 
 Compile mySysStat.c
+
     gcc -Wall mySysStat.c -o mySysStat -lm
 
 About printing priority:
     I've used ESCape code to make sure data printed at speicif line,
     but I didn't figure out how to print rest of information while waiting
-    memory use and cpu use to be printed.
-
-    Sorry, you have to wait to see the rest information.
+    memory use and cpu use to be printed. Sorry, you have to wait to see the rest information.
 
 Flags: 
     - Flag's priority is always bigger than default.
@@ -64,10 +63,15 @@ Calculate memory use struct sysinfo *info, called from <sys/sysinfo.h>:
     physic memory  = ram, virtual memory = ram + swap
 
 Call sysconf() "unistd.h" to get/print number of cores in the system
+
 Call getrusage() "sys/resource.h" to get/print memory usage
+
 USe struct sysinfo *info "sys/sysinfo.h" to print memory used information
+
 USe struct utmp *buf "utmp.h" to print user information under user usage
+
 Use struct utsname *name "sys/utsname.h" to print system information under system usage
+
 Get/print CPU use rate by reading "/proc/stat", get data at first line to solve the problem
 
 If you want to see my non-copy code -> liujunxu@iits-b473-13:~/cscb09w22_space/assignment1
